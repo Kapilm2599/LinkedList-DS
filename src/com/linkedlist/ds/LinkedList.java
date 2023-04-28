@@ -70,6 +70,20 @@ public class LinkedList {
 	public void deleteFirst() {
 		head = head.next;
 	}
+	
+	public void deleteLast() {
+		if (head == null)
+			System.out.println("List is empty");
+		else if (head.next == null)
+			head = null;
+		else {
+			Node temp = head;
+			while (temp.next.next != null) {
+				temp = temp.next;
+			}
+			temp.next = null;
+		}
+	}
 
 	public static void main(String[] args) {
 
@@ -86,7 +100,7 @@ public class LinkedList {
 		list.addPosition(30, position);
 		list.display();
 		
-		list.deleteFirst();
+		list.deleteLast();
 		list.display();
 		list.deleteFirst();
 		list.display();
